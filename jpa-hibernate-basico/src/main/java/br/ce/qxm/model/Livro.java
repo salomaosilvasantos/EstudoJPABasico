@@ -1,4 +1,4 @@
-package model;
+package br.ce.qxm.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

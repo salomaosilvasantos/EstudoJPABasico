@@ -1,10 +1,10 @@
-package repository;
+package br.ce.qxm.repository;
 
 import java.util.List;
 
 import javax.persistence.EntityManager;
 
-import model.Livro;
+import br.ce.qxm.model.Livro;
 
 public class LivroRepository {
 	private EntityManager em;

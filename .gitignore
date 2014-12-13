@@ -5,7 +5,6 @@ estudoJPABasico/.classpath
 estudoJPABasico/.project
 estudoJPABasico/target
 *.class
-*.jar
 *.war
 *.ear
 *.log

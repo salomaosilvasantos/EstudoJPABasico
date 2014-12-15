@@ -7,61 +7,65 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-@Table(name = "livros")
+@Table(name = "autores")
 @Entity
-public class Livro {
+public class Autor {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	private String titulo;
 
-	@ManyToOne
-	@JoinColumn(name = "editora_id")
-	private Editora editora;
+	private String nome;
 
 	@OneToMany(mappedBy = "livro", targetEntity = AutorLivro.class, fetch = FetchType.LAZY)
 	private List<AutorLivro> autorLivro;
 
-	public Livro() {
-		super();
-	}
-
+	/**
+	 * @return the id
+	 */
 	public int getId() {
 		return id;
 	}
 
+	/**
+	 * @param id
+	 *            the id to set
+	 */
 	public void setId(int id) {
 		this.id = id;
 	}
 
-	public String getTitulo() {
-		return titulo;
+	/**
+	 * @return the nome
+	 */
+	public String getNome() {
+		return nome;
 	}
 
-	public void setTitulo(String titulo) {
-		this.titulo = titulo;
+	/**
+	 * @param nome
+	 *            the nome to set
+	 */
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
-	public Editora getEditora() {
-		return editora;
-	}
-
-	public void setEditora(Editora editora) {
-		this.editora = editora;
-	}
-
+	/**
+	 * @return the autorLivro
+	 */
 	public List<AutorLivro> getAutorLivro() {
 		return autorLivro;
 	}
 
+	/**
+	 * @param autorLivro
+	 *            the autorLivro to set
+	 */
 	public void setAutorLivro(List<AutorLivro> autorLivro) {
 		this.autorLivro = autorLivro;
 	}
-	
+
 }

@@ -20,11 +20,9 @@ public class Livro {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String titulo;
-
 	@ManyToOne
 	@JoinColumn(name = "editora_id")
 	private Editora editora;
-
 	@OneToMany(mappedBy = "livro", targetEntity = AutorLivro.class, fetch = FetchType.LAZY)
 	private List<AutorLivro> autorLivro;
 

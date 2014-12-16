@@ -1,0 +1,10 @@
+EstudoJPABasico/.metadata
+EstudoJPABasico/.settings
+EstudoJPABasico/.classpath
+EstudoJPABasico/.project
+EstudoJPABasico/target
+*.class
+*.jar
+*.war
+*.ear
+*.log

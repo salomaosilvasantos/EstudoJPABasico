@@ -1,15 +1,9 @@
 package br.ce.qxm.model;
 
-import java.util.List;
-
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Table(name = "livros")
@@ -20,14 +14,16 @@ public class Livro {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String titulo;
-	@ManyToOne
-	@JoinColumn(name = "editora_id")
-	private Editora editora;
-	@OneToMany(mappedBy = "livro", targetEntity = AutorLivro.class, fetch = FetchType.LAZY)
-	private List<AutorLivro> autorLivro;
+	private String autor;
 
 	public Livro() {
 		super();
+	}
+
+	public Livro(String titulo, String autor) {
+		super();
+		this.titulo = titulo;
+		this.autor = autor;
 	}
 
 	public int getId() {
@@ -46,20 +42,19 @@ public class Livro {
 		this.titulo = titulo;
 	}
 
-	public Editora getEditora() {
-		return editora;
+	/**
+	 * @return the autor
+	 */
+	public String getAutor() {
+		return autor;
 	}
 
-	public void setEditora(Editora editora) {
-		this.editora = editora;
+	/**
+	 * @param autor
+	 *            the autor to set
+	 */
+	public void setAutor(String autor) {
+		this.autor = autor;
 	}
 
-	public List<AutorLivro> getAutorLivro() {
-		return autorLivro;
-	}
-
-	public void setAutorLivro(List<AutorLivro> autorLivro) {
-		this.autorLivro = autorLivro;
-	}
-	
 }

@@ -2,7 +2,6 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>br.ce.qxd</groupId>
-  <artifactId>jpa-hibernate-basico</artifactId>
   <packaging>war</packaging>
   <version>0.0.1-SNAPSHOT</version>
   <name>jpa-hibernate-basico Maven Webapp</name>
@@ -30,6 +29,7 @@
 		</dependency>
 	</dependencies>
   <build>
-    <finalName>jpa-hibernate-basico</finalName>
+    <finalName>estudo-jpa-basico</finalName>
   </build>
+  <artifactId>estudo-jpa-basico</artifactId>
 </project>
